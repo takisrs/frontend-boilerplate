@@ -1,1 +1,1 @@
-# Frontend boilplate with webpack, SASS, 7-1 architecture, BEM, font-awesome
+# Frontend boilplate with webpack, SASS, 7-1 pattern architecture, BEM, font-awesome
