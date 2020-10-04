@@ -1,0 +1,252 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container-narrow {
+  max-width: $max-width; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+ }
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hidden{
+  display:none !important;;
+
+  &-sm{
+    @include media('>sm'){
+      display:none !important;
+    }
+  }
+
+  &-md{
+    @include media('>md'){
+      display:none !important;
+    }
+  }
+
+  &-lg{
+    @include media('>lg'){
+      display:none !important;
+    }
+  }
+
+  &-xl{
+    @include media('>xl'){
+      display:none !important;
+    }
+  }
+}
+
+.visible{
+  display:block;
+
+  &-sm{
+    @include media('>sm'){
+      display:block !important;
+    }
+  }
+
+  &-md{
+    @include media('>md'){
+      display:block !important;
+    }
+  }
+
+  &-md{
+    @include media('>md'){
+      display:block !important;
+    }
+  }
+
+  &-xl{
+    @include media('>xl'){
+      display:inherit !important;
+    }
+  }
+}
+
+.m{
+  &t{
+    &--1{
+      margin-top:1rem;
+    }
+    &--2{
+      margin-top:2rem;
+    }
+    &--3{
+      margin-top:3rem;
+    }
+    &--5{
+      margin-top:5rem;
+    }
+  }
+  &b{
+    &--1{
+      margin-bottom:1rem;
+    }
+    &--5{
+      margin-bottom:5rem;
+    }
+  }
+  &l{
+    &--0{
+      margin-left:0 !important;
+    }
+
+    &--1{
+      margin-left:1rem;
+    }
+  }
+  &r{
+    &--1{
+      margin-right:1rem;
+    }
+  }
+}
+
+
+.p{
+  &t{
+    &--1{
+      padding-top:1rem;
+    }
+    &--5{
+      padding-top:5rem;
+    }
+  }
+  &b{
+    &--1{
+      padding-bottom:1rem;
+    }
+  }
+  &l{
+    &--0{
+      padding-left:0 !important;
+    }
+
+    &--1{
+      padding-left:1rem;
+    }
+  }
+  &r{
+    &--1{
+      padding-right:1rem;
+    }
+  }
+}
+
+.mw-30{
+  min-width:30rem;
+}
+
+.d-inline{
+  display:inline-block;
+}
+
+.custom-select {
+  border:0;
+  padding:0;
+  margin:0;
+  display: inline-block;
+  font-family:inherit;
+  color: $mid-grey;
+  line-height: 1.3;
+  padding: 0.5rem 2.8rem 0.5rem 0.7rem;
+  max-width: 100%; 
+  box-sizing: border-box;
+  border: 1px solid $white-color;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $white-color;
+  background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 80v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48zM240.971 361.941l135.515-135.515c9.373-9.373 9.373-24.569 0-33.941l-16.971-16.971c-9.373-9.373-24.569-9.373-33.941 0L224 277.088 122.427 175.515c-9.373-9.373-24.569-9.373-33.941 0l-16.971 16.971c-9.373 9.373-9.373 24.569 0 33.941L207.03 361.942c9.372 9.372 24.568 9.372 33.941-.001z"/></svg>');
+  background-repeat: no-repeat, repeat;
+  background-position: right .7rem top 50%, 0 0;
+  background-size: 1.4rem auto, 100%;
+  cursor:pointer;
+
+  &::-ms-expand{
+    display: none;
+  }
+
+  &:hover{
+    color:$dark-grey;
+  } 
+
+  &:focus{
+    color:$dark-grey;
+    outline: none;
+  }
+
+  option{
+    font-weight:normal;
+  }
+}
+
+.img{
+  max-width: 100%;
+  height:auto;
+  display:block;
+}
+
+.bold{
+  font-weight:bold;
+}
+
+.text-center{
+  text-align:center;
+}
+
+.italic{
+  font-style:italic;
+}
+
+.sticky{
+  position:sticky;
+  top:2rem;
+}

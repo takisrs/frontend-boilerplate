@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn{
+    background-color:$brand-color;
+    border:0;
+    padding:1rem 2rem;
+    color:$white-color;
+    display:inline-block;
+    text-decoration:none;
+    font-size:1.5rem;
+    text-align:center;
+    cursor:pointer;
+    transition: all 0.4s;
+
+
+    &:hover,
+    &:active,
+    &:focus,
+    &--active{
+        background-color:$dark-grey;
+        color:$white-color;
+        text-decoration:none;
+    }
+
+
+    &--grey{
+        background:$dark-grey;
+    
+        &:hover,
+        &:active,
+        &:focus,
+        &.btn--active{
+            background:$brand-color;
+        }
+
+    }
+
+    &--light-grey{
+        background:$light-grey;
+        color:$dark-grey;
+    
+        &:hover,
+        &:active,
+        &:focus,
+        &.btn--active{
+            background:$dark-grey;
+            color:$white-color;
+        }
+    }
+
+    &--md{
+        font-size:2rem;
+    }
+
+    &--fluid{
+        width:100%;
+    }
+
+    &--center{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        max-width:40rem;
+    }
+
+}

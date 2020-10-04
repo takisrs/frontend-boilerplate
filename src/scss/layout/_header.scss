@@ -1,0 +1,133 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.header{
+    padding:1rem 1rem;
+    background-color:$brand-color;
+    display:grid;
+    border-bottom:1.3rem $black-color solid;
+    grid-template-areas: "menu logo search user";
+    align-items:center;
+    justify-items:center;
+
+    @include media(">md"){
+        grid-template-columns: 1fr 1fr 6fr 1fr;
+        grid-template-areas: "logo info info info"
+                            "logo menu search user";
+    }
+
+    &__info-boxes{
+        grid-area:info;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+        display:none;
+
+        @include media(">md"){
+            display:flex;
+
+            @include media("<lg"){
+                margin-top:1rem;
+                justify-content:center;
+            }
+        }
+    }
+}
+
+.logo{
+    grid-area:logo;
+    padding:0 2rem;
+
+    @include media(">sm"){
+        padding:0;
+    }
+
+    .img{
+        max-width:5rem;
+
+        @include media(">sm"){
+            max-width:100%;
+        }
+        
+    }
+}
+
+.user-options{
+    grid-area:user;
+    flex-shrink: 0;
+
+    ul{
+        display:flex;
+    }
+
+    li{
+        padding-right:0.3rem;
+
+        @include media(">md"){
+            padding-right:1.7rem;
+        }
+
+        &:last-child{
+            padding-right:0.5rem;
+            @include media(">md"){
+                padding-right:0;
+            }
+        }
+    }
+
+    &__cart{
+        position:relative;
+    }
+
+    .icon{
+        display:inline-block;
+        text-align:center;
+        font-size:2.5rem;
+
+        @include media(">sm"){
+            font-size:1.8rem;
+        }
+
+    }
+
+    .title{
+        display:none;
+    }
+
+    .count{
+        color:$white-color;
+        background:$black-color;
+        width:1.5rem;
+        height:1.5rem;
+        border-radius:50%;
+        font-size:1.1rem;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        font-weight:bold;
+        position:absolute;
+        right:-0.2rem;
+        top:-0.2rem;
+    }
+
+    a{
+        display:flex;
+        align-items: center;
+        color:$white-color;
+        text-decoration:none;
+        justify-content:center;
+        padding:0.4rem 0.7rem;
+        border-radius:50%;
+        transition:all 0.4s;
+
+        @include media(">sm"){
+            padding:0.7rem 1rem;
+        }
+
+        &:hover{
+            color:$white-color;
+            background:$black-color;
+        }
+    }
+
+}

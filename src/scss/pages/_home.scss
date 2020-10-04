@@ -1,0 +1,17 @@
+.view-all{
+    background:$light-grey;
+    text-align:right;
+    margin-top:2rem;
+
+    a{
+        display:inline-block;
+        padding:1rem 2rem;
+        background:$black-color;
+        color:$white-color;
+
+        &:hover{
+            text-decoration:none;
+            background:$brand-color;
+        }
+    }
+}

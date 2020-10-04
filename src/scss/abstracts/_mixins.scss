@@ -1,0 +1,71 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+// MEDIA QUERY MANAGER
+/*
+1em = 16px
+*/
+@mixin media($breakpoint) {
+  @if $breakpoint == '<sm' {
+      @media only screen and (max-width: map-get($breakpoints, "sm")) { @content };
+  }
+  @if $breakpoint == '>sm' {
+    @media only screen and (min-width: map-get($breakpoints, "sm")) { @content };
+  }
+  @if $breakpoint == '<md' {
+      @media only screen and (max-width: map-get($breakpoints, "md")) { @content };
+  }
+  @if $breakpoint == '>md' {
+    @media only screen and (min-width: map-get($breakpoints, "md")) { @content };
+  }
+  @if $breakpoint == '<lg' {
+      @media only screen and (max-width: map-get($breakpoints, "lg")) { @content };
+  }
+  @if $breakpoint == '>lg' {
+    @media only screen and (min-width: map-get($breakpoints, "lg")) { @content };
+  }
+  @if $breakpoint == '<xl' {
+      @media only screen and (max-width: map-get($breakpoints, "xl")) { @content };
+  }
+  @if $breakpoint == '>xl' {
+    @media only screen and (min-width: map-get($breakpoints, "xl")) { @content };
+  }
+  @if $breakpoint == '<xxl' {
+    @media only screen and (max-width: map-get($breakpoints, "xxl")) { @content };
+}
+@if $breakpoint == '>xxl' {
+  @media only screen and (min-width: map-get($breakpoints, "xxl")) { @content };
+}
+}
+

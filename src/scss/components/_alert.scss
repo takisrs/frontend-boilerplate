@@ -1,0 +1,42 @@
+.alert{
+  font-size:1.5rem;
+  padding:1.5em;
+  background-color:$light-grey;
+  margin:1rem 0rem 2rem;
+  border-radius:4px;
+
+  &:first-child{
+    margin-top:0;
+  }
+
+  &--error{
+    border:1px #ffa39e solid;
+    background-color:#fff1f0;
+  }
+
+  &--success{
+    background-color:#f6ffed;
+    border:1px #b7eb8f solid;
+  }
+
+  &--info{
+    background-color: #e6f7ff;
+    border: 1px #91d5ff solid;
+  }
+
+  &--warning{
+    background-color: #fffbe6;
+    border: 1px  #ffe58f solid;
+  }
+
+  &__title{
+    display:block;
+    font-size:2rem;
+    padding-bottom:0.5rem;
+  }
+
+  &__message{
+    font-size:1.5rem;
+  }
+  
+}

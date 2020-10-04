@@ -1,0 +1,52 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "Frontend boilplate with webpack, SASS, 7-1 architecture, BEM, font-awesome",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "webpack",
+    "7-1 architecture",
+    "sass",
+    "BEM"
+  ],
+  "author": "Panos Pantazopoulos",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-transform-object-assign": "^7.10.4",
+    "@babel/plugin-transform-template-literals": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "@fortawesome/fontawesome-free-brands": "^5.1.0-3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "expose-loader": "^0.7.5",
+    "file-loader": "^5.1.0",
+    "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.44.1",
+    "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5"
+  }
+}

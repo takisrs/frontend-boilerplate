@@ -1,0 +1,95 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footer{
+    padding:3rem 1.5rem;
+    color:$white-color;
+    background:$black-color;
+
+    &__blocks{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        grid-gap:4rem;
+        text-align:center;
+
+        @include media(">sm"){
+            text-align:left;
+        }
+        
+        @include media(">xl"){
+            > div:nth-child(-n+2){
+                border-right:1px lighten($mid-grey, 30%) solid;
+            }
+        }
+
+    }
+
+    &__title{
+        color:$white-color;
+        font-size:1.8rem;
+        margin-bottom:1rem;
+    }
+
+    &__block{
+
+        &--newsletter{
+            margin-top:2rem;
+        }
+
+        &--credits{ 
+            text-align:center;
+            margin-top:2rem;
+
+            @include media(">sm"){
+                text-align:left;
+                margin-top:1rem; 
+            }
+                 
+            a{
+                color:#ffffff;
+            }
+        }
+    }
+
+    &__contact{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap:1rem;
+
+        .details{
+            padding-top:1rem;
+
+            div{
+                margin-bottom:1rem;
+            }
+
+            span{
+                color:$brand-color;
+            }
+        }
+
+        .map a{
+            display:block;
+        }
+
+    }
+
+    &__payment-icons{
+        display:block;
+        text-align:center;
+        margin-top:1rem;
+
+        @include media(">sm"){
+            text-align:left;
+        }
+
+        span{
+            padding-bottom:0.5rem;
+            color:$brand-color;
+            white-space:nowrap;
+            display:block;
+        }
+    }
+
+
+}

@@ -1,0 +1,144 @@
+.nav {
+    grid-area:menu;
+    position:relative;
+
+    &__toggle{
+        background:none;
+        border:0;
+        outline:0;
+        font-size:2rem;
+        color:$white-color;
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        padding:0.5rem 1rem;
+        transition: background-color 0.4s;
+
+        .title{
+            margin-right:1rem;
+
+            @include media('<sm'){
+                display:none;
+            }
+        }
+
+        .icon{
+            font-size:3rem;
+
+            @include media('<sm'){
+                font-size:3.6rem;
+            }
+        }
+
+        &:not(.visible),
+        &:hover{
+            background:$black-color;
+        }
+    }
+
+    > ul{
+        position:absolute;
+        top:5.53rem;
+        left:0rem;
+        z-index:10;
+        padding:2rem 0rem;
+        z-index:3;
+        background-color: $white-color;
+        box-shadow:0.3rem 0rem 1rem -2px rgba($dark-grey, 0.3);
+        min-width:30rem;
+    }
+
+    &__item{
+        &--active{
+            .nav__link{
+                background-color:$white-color;
+                color:$brand-color;
+            }
+        }
+
+        svg{
+            display:none;
+        }
+
+        &--has-submenu svg{
+            display:block;
+        }
+
+        &:hover .nav__link{
+            background-color:$brand-color;
+            color:$white-color;
+            text-decoration:none;
+        }
+        
+    }
+
+    &__link{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $dark-grey;
+        font-size:1.6rem;
+        text-align:left;
+        text-decoration:none;
+        padding:1rem 2rem;
+        transition: all 0.4s;
+
+        @include media('>sm'){
+            padding:1rem 3rem;
+        }
+
+    }
+
+
+    &__sub{
+        position:absolute;
+        top:0;
+        left:100%;
+        opacity:0;
+        background:$white-color;
+        padding:2rem 0rem;
+        z-index:100;
+        min-width:35rem;
+        box-shadow:0.3rem 0rem 1rem -2px rgba($dark-grey, 0.3);
+        visibility:hidden;
+        transition:all 0.4s;
+        transform: translateX(-2rem);
+
+        @include media('<sm'){
+            position:relative;
+            left:0;
+            top:0;
+            display:none;
+            background:$light-grey;
+            box-shadow:none;
+        }
+
+        &--active{
+            visibility:visible;
+            opacity:1;
+            transform: translateX(0);
+
+            @include media('<sm'){
+                display:block;
+            }
+        }
+
+        ul{
+            list-style:none;
+        }
+    }
+
+    &__sublink{
+        display:block;
+        padding:1rem 3rem;
+        color:$dark-grey;
+        font-size:1.6rem;
+        transition: all 0.4s;
+
+        &:hover{
+            background:$brand-color;
+            color:$white-color;
+            text-decoration: none;
+        }
+    }
+}

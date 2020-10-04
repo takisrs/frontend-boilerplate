@@ -1,0 +1,90 @@
+.pagination{
+    margin:0rem 3rem 0rem 0rem;
+    background:$white-color;
+    padding:0rem 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media ("<sm"){
+        display:none;
+    }
+
+    &__item{
+        margin:0;
+
+        &:first-child{
+            margin-left:0;
+        }
+
+        &--active{
+            a{
+                color:$dark-grey;
+                font-weight:bold;
+            }
+        }
+
+    }
+
+    &__link{
+        display:flex;
+        align-items:center;
+        padding:0.5rem;
+        color:$mid-grey;
+        font-weight:500;
+        font-size:1.3rem;
+
+        &:hover{
+            text-decoration:none;
+            color:$dark-grey;
+        }
+    }
+
+
+    &--bottom{
+        background:none;
+        text-align:center;
+        margin:5rem auto 3rem;
+        
+        @include media ("<sm"){
+            display:flex;
+        }
+
+        .pagination__link{
+            display:block;
+            font-size:2rem;
+            background-color:$light-grey;
+            margin:0.5rem 0rem;
+            padding:1rem 1.5rem;
+            color:$dark-grey;
+            transition:all 0.4s;
+            border:1px darken($light-grey, 7%) solid;
+            border-right:0;
+
+            &:last-child{
+                border-right:1px darken($light-grey, 7%) solid;
+            }
+
+            &:hover{
+                text-decoration:none;
+                background-color:$black-color;
+                color:$white-color;
+                border-color:$black-color;
+            }
+        }
+
+        .pagination__item--active{
+            a{
+                background-color:$black-color;
+                color:$white-color;
+                border-color:$black-color;
+            }
+        }
+
+        .pagination__item--next,
+        .pagination__item--previous{
+            margin:0rem;
+        }
+
+    }
+}

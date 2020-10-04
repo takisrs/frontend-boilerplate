@@ -1,0 +1,38 @@
+.panel{
+    margin-bottom:1rem;
+    margin-top:1rem;
+
+    @include media(">sm"){
+        margin-top:0;
+        margin-bottom:2rem;
+    }
+
+    &__title{
+        background-color:$black-color;
+        color:$white-color;
+        font-size:1.6rem;
+        font-weight:500;
+        padding:0.5rem 2rem;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__content{
+        padding:2rem 2rem;
+        max-height:30rem;
+        overflow:auto;
+
+        ul{
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+
+        a{
+            color:$dark-grey;
+            display:block;
+            padding:0.3rem 0;
+        }
+    }
+}

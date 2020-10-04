@@ -1,0 +1,85 @@
+
+.form{
+    &__group{
+      margin:1rem 0rem;
+
+      &--2columns{
+        display:flex;
+        justify-content: space-between;
+
+        :first-child{
+          margin-right:1rem;
+        }
+      }
+    }
+  
+    &__label{
+      display:inline-block;
+      margin-bottom:0.5rem;
+  
+      &--radio{
+        padding:0.5rem 1rem;
+  
+        input{
+          margin-right:0.3rem;
+        }
+  
+      }
+  
+    
+      &--checkbox{
+        padding:0.5rem 1rem 0.5rem 0;
+  
+        input{
+          margin-right:0.3rem;
+        }
+  
+      }
+    }
+  
+    &__input{
+      padding:1rem 1rem;
+      width:100%;
+      border:1px $light-grey solid;
+      background: $white-color;
+      box-shadow: 0 0 0 .05rem rgba($dark-grey, 0.1);
+      font-family:inherit;
+      font-size:1.6rem;
+      display:block;
+      background-clip: padding-box;
+      border-radius: 4px;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+      &--sm{
+        max-width:40rem;
+      }
+  
+      &:hover{
+        border-color:darken($light-grey, 20%);
+        outline: 0;
+        box-shadow: 0 0 0 .05rem rgba($dark-grey, 0.25);
+      }
+  
+      &:focus{
+        border-color:darken($light-grey, 40%);
+        outline: 0;
+        box-shadow: 0 0 0 .08rem rgba($dark-grey, 0.4);
+      }
+    }
+  
+  
+    &__select{
+      padding:1rem 1rem;
+      width:100%;
+      border:1px $light-grey solid;
+      background: $white-color;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      font-family:inherit;
+    }
+  
+    &__action{
+      &--right{
+        float:right;
+      }
+    }
+  }

@@ -1,0 +1,155 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+.preload * {
+  transition: none !important;
+}
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin:0;
+  padding:0;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+html{
+  font-size:50%;
+
+  @include media('>sm') {
+    font-size: 55%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include media('>md') {
+    font-size: 58%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include media('>lg') {
+    font-size: 62%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include media('>xl') {
+    font-size: 65%; //1 rem = 9px, 9/16 = 50%
+  }
+
+}
+
+body{
+  font-family:$text-font-stack;
+}
+
+ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+p{
+  margin:1rem 0 2rem;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: [start] minmax(1.5rem, 0.3fr) [content-start] repeat(8, 1fr) [content-end] minmax(1.5rem, 0.3fr) [end];
+  grid-template-rows: repeat(8, min-content);
+
+  &--checkout{
+    
+    .header{
+      grid-template-columns: 1fr;
+      grid-template-areas: "logo"
+                            "steps";
+
+      @include media('>md'){
+        grid-template-columns: 1fr 11fr;
+        grid-template-areas: "logo steps";
+      }
+
+    }
+
+    .logo img{
+      max-width:6rem;
+    }
+
+    .wrapper{
+      padding-top:1rem;
+    }
+  }
+}
+
+.header{
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+.footer{
+  grid-column:start / end;
+  grid-row: 8 / 9;
+}
+
+.breadcrumbs{
+  grid-column: start / end;
+  grid-row: 3 / 4; 
+}
+
+.slider-wrapper{
+  grid-column: start / end;
+}
+
+.wrapper{
+  grid-column: content-start / content-end;
+  grid-row: 4 / 8; 
+  min-width: 100%;
+  min-height:50rem;
+  padding-top:1.5rem;
+  padding-bottom:5rem;
+
+  &--with-sidebar{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 3rem;
+
+    @include media(">md"){
+      grid-template-columns: 3fr 10fr;
+    }
+
+    @include media(">lg"){
+      grid-column-gap: 6rem;
+    }
+  }
+}
+
+.sidebar{
+  display: grid;
+  grid-column: 1 / 2;
+  align-content: flex-start;
+  padding: 2rem;
+  background: $light-grey;
+}

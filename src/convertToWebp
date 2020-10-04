@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for file in ../assets/images/*.jpg 
+do 
+test ! -f "${file}.webp" && cwebp -q 80 "$file" -o "${file}.webp"
+done
