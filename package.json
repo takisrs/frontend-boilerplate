@@ -9,20 +9,26 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/takisrs/frontend-boilerplate"
   },
   "keywords": [
     "webpack",
     "7-1 architecture",
     "sass",
-    "BEM"
+    "BEM",
+    "fontawesome"
   ],
-  "author": "Panos Pantazopoulos",
-  "license": "ISC",
-  "bugs": {
-    "url": ""
+  "author": {
+    "name": "Panos Pantazopoulos",
+    "email": "takispadaz@gmail.com",
+    "url": "https://github.com/takisrs"
   },
-  "homepage": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takisrs/frontend-boilerplate/issues",
+    "email" : "takispadaz@gmail.com"
+  },
+  "homepage": "https://github.com/takisrs/frontend-boilerplate",
   "devDependencies": {
     "@babel/core": "^7.11.5",
     "@babel/plugin-transform-object-assign": "^7.10.4",
